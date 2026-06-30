@@ -1,0 +1,29 @@
+# Site settings
+title: id-velop
+email: ""
+description: >-
+  Personal portfolio showcasing Chrome extensions, Figma plugins,
+  iPhone shortcuts, and creative development projects.
+baseurl: ""
+url: "https://id-velop.github.io"
+twitter_username: ""
+github_username: id-velop
+
+# Build settings
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Portfolio settings
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
