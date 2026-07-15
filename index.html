@@ -1,188 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Git Magager - Privacy Policy</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background-color: #f6f8fa;
-      padding: 20px;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      background: white;
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-      color: #24292e;
-      margin-bottom: 10px;
-      font-size: 2em;
-      border-bottom: 2px solid #0366d6;
-      padding-bottom: 10px;
-    }
-
-    .last-updated {
-      color: #586069;
-      font-size: 0.9em;
-      margin-bottom: 30px;
-      font-style: italic;
-    }
-
-    h2 {
-      color: #24292e;
-      margin-top: 30px;
-      margin-bottom: 15px;
-      font-size: 1.5em;
-    }
-
-    h3 {
-      color: #24292e;
-      margin-top: 20px;
-      margin-bottom: 10px;
-      font-size: 1.2em;
-    }
-
-    p {
-      margin-bottom: 15px;
-    }
-
-    ul {
-      margin-left: 30px;
-      margin-bottom: 15px;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    strong {
-      color: #24292e;
-    }
-
-    a {
-      color: #0366d6;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .highlight-box {
-      background: #f1f8ff;
-      border-left: 4px solid #0366d6;
-      padding: 15px 20px;
-      margin: 20px 0;
-      border-radius: 4px;
-    }
-
-    footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #e1e4e8;
-      color: #586069;
-      font-size: 0.9em;
-      text-align: center;
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Handcrafted Chrome extensions, Figma plugins, and tiny utilities from YE Studio.">
+  <meta name="theme-color" content="#05060d">
+  <meta property="og:title" content="YE Studio Tool Market">
+  <meta property="og:description" content="Small tools. Less friction.">
+  <meta property="og:type" content="website">
+  <title>YE Studio — Tool Market</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/images/ye-studio-mark.png">
 </head>
 <body>
-  <div class="container">
-    <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated: June 9, 2026</p>
+  <a class="skip-link" href="#tools">Skip to tools</a>
 
-    <div class="highlight-box">
-      <strong>Summary:</strong> Git Magager does NOT collect, store, or transmit any personal information or user data to external servers. All operations are performed locally on your device.
+  <header class="site-header" aria-label="Primary navigation">
+    <a class="brand" href="./" aria-label="YE Studio home">
+      <img class="brand__mark" src="assets/images/ye-studio-mark.png" alt="">
+      <span class="brand__name">YE Studio</span>
+      <span class="brand__section">Tool Market</span>
+    </a>
+    <nav class="site-nav" aria-label="Site links">
+      <a href="#about">About</a>
+      <a href="https://github.com/id-velop" target="_blank" rel="noreferrer">
+        GitHub <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero__art" src="assets/images/orbital-hero.png" alt="" fetchpriority="high">
+      <div class="hero__veil" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <h1 id="hero-title">Small tools.<br>Less friction.</h1>
+          <p class="hero__lede">Handcrafted Chrome extensions, Figma plugins, and tiny utilities that solve real problems—fast.</p>
+          <a class="button button--primary" href="#tools">
+            Explore tools <i class="ph ph-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <a class="featured-card" href="git-magager/" aria-label="View Git Magager">
+          <div class="featured-card__topline">
+            <span class="status-chip"><span></span> Featured</span>
+            <i class="ph ph-arrow-up-right featured-card__corner" aria-hidden="true"></i>
+          </div>
+          <img class="featured-card__icon" src="assets/images/git-magager-icon.png" alt="Git Magager icon">
+          <div>
+            <span class="platform-chip"><i class="ph ph-browser" aria-hidden="true"></i> Chrome extension</span>
+            <h2>Git Magager</h2>
+            <p>Clone repositories with one click. No terminal gymnastics required.</p>
+          </div>
+          <span class="featured-card__action">View tool <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="catalog" id="tools" aria-labelledby="tools-title">
+      <div class="catalog__toolbar">
+        <label class="search-field" for="tool-search">
+          <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+          <span class="sr-only">Search tools</span>
+          <input id="tool-search" type="search" placeholder="Search tools..." autocomplete="off">
+          <kbd><span>⌘</span>K</kbd>
+        </label>
+
+        <div class="filter-tabs" aria-label="Filter tools by platform">
+          <button class="filter-tab is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-tab" type="button" data-filter="chrome" aria-pressed="false">Chrome</button>
+          <button class="filter-tab" type="button" data-filter="figma" aria-pressed="false">Figma</button>
+          <button class="filter-tab" type="button" data-filter="utilities" aria-pressed="false">Utilities</button>
+        </div>
+      </div>
+
+      <div class="catalog__heading">
+        <div>
+          <h2 id="tools-title">All tools</h2>
+        </div>
+        <p id="result-count" class="result-count" aria-live="polite">3 tools</p>
+      </div>
+
+      <div class="tool-grid" id="tool-grid">
+        <article class="tool-card" data-platform="chrome utilities" data-search="git magager clone repository github gitlab chrome extension developer">
+          <div class="tool-card__topline">
+            <img class="tool-card__icon" src="assets/images/git-magager-icon.png" alt="Git Magager icon">
+          </div>
+          <span class="platform-chip"><i class="ph ph-browser" aria-hidden="true"></i> Chrome extension</span>
+          <h3>Git Magager</h3>
+          <p>One-click Git clone on GitHub and GitLab. Pick a folder and get back to building.</p>
+          <a class="tool-card__link" href="git-magager/">
+            View tool <i class="ph ph-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
+
+        <article class="tool-card" data-platform="figma" data-search="auto layout helper figma plugin spacing frames design">
+          <div class="tool-card__topline">
+            <img class="tool-card__icon" src="assets/images/auto-layout-helper-icon.png" alt="Auto Layout Helper icon">
+            <span class="availability">Upcoming</span>
+          </div>
+          <span class="platform-chip"><i class="ph ph-figma-logo" aria-hidden="true"></i> Figma plugin</span>
+          <h3>Auto Layout Helper</h3>
+          <p>Turn messy selections into tidy, responsive frames without breaking your creative flow.</p>
+          <span class="tool-card__link tool-card__link--muted">In the workshop</span>
+        </article>
+
+        <article class="tool-card" data-platform="figma utilities" data-search="color palette generator figma plugin colors accessibility design">
+          <div class="tool-card__topline">
+            <img class="tool-card__icon" src="assets/images/color-palette-generator-icon.png" alt="Color Palette Generator icon">
+            <span class="availability">Upcoming</span>
+          </div>
+          <span class="platform-chip"><i class="ph ph-figma-logo" aria-hidden="true"></i> Figma plugin</span>
+          <h3>Color Palette Generator</h3>
+          <p>Generate balanced, accessible color systems directly from your Figma canvas.</p>
+          <span class="tool-card__link tool-card__link--muted">In the workshop</span>
+        </article>
+      </div>
+
+      <div class="empty-state" id="empty-state" hidden>
+        <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+        <h3>No tools found</h3>
+        <p>Try another search or switch back to All.</p>
+        <button class="button button--secondary" id="reset-search" type="button">Reset search</button>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <p class="section-kicker">About YE Studio</p>
+      <div class="about__grid">
+        <h2 id="about-title">Useful by design.<br>Small on purpose.</h2>
+        <div class="about__copy">
+          <p>YE Studio makes focused tools for designers and developers. Each release starts with a repetitive task and ends when that task feels effortless.</p>
+          <a href="https://github.com/id-velop" target="_blank" rel="noreferrer">Follow the work on GitHub <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="brand brand--footer">
+      <img class="brand__mark" src="assets/images/ye-studio-mark.png" alt="">
+      <span class="brand__name">YE Studio</span>
     </div>
+    <p>Small tools, made with care. © 2026 YE Studio.</p>
+    <a href="https://github.com/id-velop" target="_blank" rel="noreferrer" aria-label="YE Studio on GitHub">
+      <i class="ph ph-github-logo" aria-hidden="true"></i>
+    </a>
+  </footer>
 
-    <h2>1. Data Collection</h2>
-    <p>Git Magager does <strong>NOT</strong> collect, store, or transmit any of the following:</p>
-    <ul>
-      <li>Personal identification information (name, email, address, etc.)</li>
-      <li>Financial information</li>
-      <li>Authentication credentials</li>
-      <li>Personal communications</li>
-      <li>Location data</li>
-      <li>Browsing history or web activity</li>
-      <li>User behavior or activity logs</li>
-    </ul>
-
-    <h2>2. Local Data Processing</h2>
-    <p>All operations are performed locally on your device. The extension:</p>
-    <ul>
-      <li>Accesses GitHub and GitLab repository pages to detect clone URLs (HTTPS/SSH)</li>
-      <li>Injects a clone button into the page DOM for user convenience</li>
-      <li>Communicates only with a local server running on your machine (localhost:9456)</li>
-      <li>Stores only user preferences (e.g., terminal auto-open setting) in browser local storage</li>
-    </ul>
-
-    <h2>3. Permissions Usage</h2>
-    <p>The extension requests the following permissions, each serving a specific purpose:</p>
-
-    <h3>3.1 Core Permissions</h3>
-    <ul>
-      <li><strong>storage</strong>: Stores user preferences and configuration settings locally</li>
-      <li><strong>activeTab</strong>: Reads the current tab's URL to pre-fill the clone dialog with repository information</li>
-      <li><strong>scripting</strong>: Injects the clone button interface into GitHub and GitLab pages</li>
-    </ul>
-
-    <h3>3.2 Host Permissions</h3>
-    <p>Host permissions are strictly limited to code hosting platforms:</p>
-    <ul>
-      <li><code>https://github.com/*</code></li>
-      <li><code>https://gitlab.com/*</code></li>
-      <li><code>https://*.gitlab.com/*</code></li>
-      <li><code>https://*.gitlab.org/*</code></li>
-    </ul>
-    <p>These permissions are used solely for:</p>
-    <ul>
-      <li>Detecting Git repository clone URLs on repository pages</li>
-      <li>Injecting clone buttons into the page interface</li>
-      <li>Monitoring page navigation changes for single-page applications</li>
-    </ul>
-
-    <h2>4. Third-Party Services</h2>
-    <p>Git Magager does <strong>NOT</strong> use any third-party services, analytics, or tracking tools.</p>
-    <p>The extension communicates <strong>only</strong> with a local companion server running on your machine at <code>http://127.0.0.1:9456</code>. This server:</p>
-    <ul>
-      <li>Executes Git clone commands in your terminal</li>
-      <li>Opens native folder selection dialogs</li>
-      <li>Stores configuration files locally on your device</li>
-      <li>Does NOT transmit any data to external servers</li>
-    </ul>
-
-    <h2>5. Data Security</h2>
-    <p>Since all data processing occurs locally on your device, there is no risk of data transmission or server-side data breaches. Your repository URLs and file paths never leave your computer.</p>
-
-    <h2>6. Children's Privacy</h2>
-    <p>Git Magager does not knowingly collect any information from children under the age of 13. As the extension does not collect any personal data, this is not applicable.</p>
-
-    <h2>7. Changes to This Privacy Policy</h2>
-    <p>We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last updated" date at the top of this page.</p>
-
-    <h2>8. Contact Us</h2>
-    <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
-    <p><strong>Email:</strong> better0027@gmail.com<br>
-    <strong>GitHub:</strong> <a href="https://github.com/id-velop/git-magager" target="_blank">https://github.com/id-velop/git-magager</a></p>
-
-    <footer>
-      <p>&copy; 2026 Git Magager. All rights reserved.</p>
-    </footer>
-  </div>
+  <script src="assets/js/market.js"></script>
 </body>
 </html>

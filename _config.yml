@@ -1,9 +1,9 @@
 # Site settings
-title: id-velop
+title: YE Studio Tool Market
 email: ""
 description: >-
-  Personal portfolio showcasing Chrome extensions, Figma plugins,
-  iPhone shortcuts, and creative development projects.
+  Handcrafted Chrome extensions, Figma plugins, and focused utilities
+  made by YE Studio.
 baseurl: ""
 url: "https://id-velop.github.io"
 twitter_username: ""
@@ -15,7 +15,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# Portfolio settings
+# Legacy project collection
 collections:
   projects:
     output: true
