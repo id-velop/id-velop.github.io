@@ -1,0 +1,4 @@
+interface:
+  display_name: "IDS Doc Illustration V2"
+  short_description: "Generate IDS docs with checker-first workflow"
+  default_prompt: "Use $ids-doc-illustration-v2 to repair IDS component Markdown illustrations with checker-first validation and no push unless requested."

@@ -1,0 +1,11 @@
+# 此目录用于存放资源文件
+# 包括模板、图标、字体等输出中使用的文件
+#
+# 示例子目录和文件：
+# - templates/
+#   - report_template.docx
+#   - email_template.html
+# - icons/
+#   - logo.png
+# - fonts/
+#   - custom_font.ttf

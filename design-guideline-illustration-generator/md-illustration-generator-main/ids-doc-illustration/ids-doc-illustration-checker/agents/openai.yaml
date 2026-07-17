@@ -1,0 +1,4 @@
+interface:
+  display_name: "IDS Doc Illustration Checker"
+  short_description: "Audit IDS docs for illustration compliance"
+  default_prompt: "Use $ids-doc-illustration-checker to inspect IDS component Markdown docs for missing or non-compliant illustrations without modifying files."

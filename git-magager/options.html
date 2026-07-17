@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Git Magager - Settings</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0f0f1a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #8b5cf6;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #64748b;
+      margin-bottom: 32px;
+      font-size: 14px;
+    }
+
+    .card {
+      background: #1a1a2e;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      font-size: 16px;
+      color: #94a3b8;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group:last-child {
+      margin-bottom: 0;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      color: #94a3b8;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    input[type="text"], select {
+      width: 100%;
+      padding: 10px 12px;
+      background: #0f0f1a;
+      border: 1px solid #2d2d44;
+      border-radius: 8px;
+      color: #e2e8f0;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input[type="text"]:focus, select:focus {
+      border-color: #8b5cf6;
+    }
+
+    .toggle-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .toggle {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+
+    .toggle input { opacity: 0; width: 0; height: 0; }
+
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #2d2d44;
+      border-radius: 24px;
+      transition: 0.3s;
+    }
+
+    .toggle-slider::before {
+      content: '';
+      position: absolute;
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background: white;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    .toggle input:checked + .toggle-slider {
+      background: #8b5cf6;
+    }
+
+    .toggle input:checked + .toggle-slider::before {
+      transform: translateX(20px);
+    }
+
+    .save-btn {
+      padding: 10px 24px;
+      background: #8b5cf6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .save-btn:hover { background: #7c3aed; }
+
+    .save-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .status {
+      margin-top: 12px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      display: none;
+    }
+
+    .status.success {
+      display: block;
+      background: rgba(34, 197, 94, 0.1);
+      color: #22c55e;
+      border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+
+    .status.error {
+      display: block;
+      background: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+
+    .hint {
+      font-size: 12px;
+      color: #4a5568;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Git Magager</h1>
+    <p class="subtitle">Browser-native repository cloning</p>
+
+    <div class="card">
+      <h2>How it works</h2>
+      <div class="form-group">
+        <label>Choose a folder on every clone</label>
+        <p class="hint">Click Clone on a GitHub or GitLab repository page. Chrome will ask where to save the repository, then Git Magager clones it directly into that folder.</p>
+      </div>
+
+      <div class="form-group">
+        <label>No companion server</label>
+        <p class="hint">The Git engine runs inside the extension. You do not need to run <code>node server.js</code> or keep a terminal open.</p>
+      </div>
+
+      <div class="form-group">
+        <label>Shallow clone</label>
+        <p class="hint">The initial browser clone downloads the latest commit and includes a working <code>.git</code> directory. Run <code>git fetch --unshallow</code> later if you need the complete history.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Compatibility</h2>
+      <div class="form-group">
+        <label>Chrome or Edge required</label>
+        <p class="hint">Direct folder access uses the browser's File System Access API. HTTPS repository URLs are supported; SSH-style URLs are automatically converted to HTTPS.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

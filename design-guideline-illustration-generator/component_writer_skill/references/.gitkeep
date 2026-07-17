@@ -1,0 +1,7 @@
+# 此目录用于存放参考文档
+# 这些文档会在需要时按需加载，减少上下文占用
+#
+# 示例文档文件：
+# - api_documentation.md
+# - detailed_guide.md
+# - best_practices.md
