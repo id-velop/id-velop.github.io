@@ -1,6 +1,6 @@
-# YE Studio Tool Market
+# YE Studio Tool Market Monorepo
 
-A small, static marketplace for Chrome extensions, Codex plugins, Figma plugins, and focused utilities made by YE Studio.
+The website and product source code for Chrome extensions, Codex plugins, Figma plugins, and focused utilities made by YE Studio.
 
 Live site: [https://id-velop.github.io](https://id-velop.github.io)
 
@@ -11,6 +11,8 @@ Live site: [https://id-velop.github.io](https://id-velop.github.io)
 - `/git-magager/privacy-policy.html` — Git Magager privacy policy
 - `/markdown-preview-editor/` — Markdown Preview & Editor Codex plugin page
 - `/plugins/markdown-preview-editor/` — Standalone Codex plugin source
+- `/products/git-magager/` — Git Magager extension source and release artifacts
+- `/products/design-guideline-illustration-generator/` — Component documentation agent source
 
 The privacy policy is intentionally kept as a child page of the Git Magager product page.
 
@@ -26,6 +28,11 @@ The privacy policy is intentionally kept as a child page of the Git Magager prod
 │   └── index.html
 ├── plugins/
 │   └── markdown-preview-editor/
+├── products/
+│   ├── git-magager/
+│   │   ├── extension/
+│   │   └── releases/
+│   └── design-guideline-illustration-generator/
 ├── assets/
 │   ├── css/style.css
 │   ├── images/
@@ -43,6 +50,12 @@ python3 -m http.server 4173 --bind 127.0.0.1
 
 Then open [http://127.0.0.1:4173](http://127.0.0.1:4173).
 
+## Product organization
+
+- Keep public website pages and assets at the repository root so GitHub Pages can publish them directly.
+- Keep Codex plugin packages in `plugins/` because their install links depend on that stable path.
+- Keep all other product source and release artifacts in `products/<product-name>/`.
+
 ## Adding a tool
 
-Add its real icon to `assets/images/`, add a `.tool-card` in `index.html`, and include searchable terms in `data-search`. Use `data-platform="chrome"`, `data-platform="figma"`, or multiple space-separated values to connect it to the existing filters.
+Add its source to `products/<product-name>/` (or `plugins/<plugin-name>/` for a Codex plugin), add its real icon to `assets/images/`, add a `.tool-card` in `index.html`, and include searchable terms in `data-search`. Use `data-platform="chrome"`, `data-platform="figma"`, or multiple space-separated values to connect it to the existing filters.
