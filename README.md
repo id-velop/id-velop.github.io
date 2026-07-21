@@ -1,6 +1,6 @@
 # YE Studio Tool Market
 
-A small, static marketplace for Chrome extensions, Figma plugins, and focused utilities made by YE Studio.
+A small, static marketplace for Chrome extensions, Codex plugins, Figma plugins, and focused utilities made by YE Studio.
 
 Live site: [https://id-velop.github.io](https://id-velop.github.io)
 
@@ -9,6 +9,8 @@ Live site: [https://id-velop.github.io](https://id-velop.github.io)
 - `/` — Tool Market homepage with search and platform filters
 - `/git-magager/` — Git Magager product page
 - `/git-magager/privacy-policy.html` — Git Magager privacy policy
+- `/markdown-preview-editor/` — Markdown Preview & Editor Codex plugin page
+- `/plugins/markdown-preview-editor/` — Standalone Codex plugin source
 
 The privacy policy is intentionally kept as a child page of the Git Magager product page.
 
@@ -20,6 +22,10 @@ The privacy policy is intentionally kept as a child page of the Git Magager prod
 ├── git-magager/
 │   ├── index.html
 │   └── privacy-policy.html
+├── markdown-preview-editor/
+│   └── index.html
+├── plugins/
+│   └── markdown-preview-editor/
 ├── assets/
 │   ├── css/style.css
 │   ├── images/

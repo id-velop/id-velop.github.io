@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Handcrafted Chrome extensions, Figma plugins, and tiny utilities from YE Studio.">
+  <meta name="description" content="Handcrafted Chrome extensions, Codex plugins, Figma plugins, and tiny utilities from YE Studio.">
   <meta name="theme-color" content="#05060d">
   <meta property="og:title" content="YE Studio Tool Market">
   <meta property="og:description" content="Small tools. Less friction.">
@@ -11,7 +11,7 @@
   <title>YE Studio — Tool Market</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="assets/images/ye-studio-mark.png">
@@ -40,7 +40,7 @@
       <div class="hero__inner">
         <div class="hero__copy">
           <h1 id="hero-title">Small tools.<br>Less friction.</h1>
-          <p class="hero__lede">Handcrafted Chrome extensions, Figma plugins, and tiny utilities that solve real problems—fast.</p>
+          <p class="hero__lede">Handcrafted Chrome extensions, Codex plugins, Figma plugins, and tiny utilities that solve real problems—fast.</p>
           <a class="button button--primary" href="#tools">
             Explore tools <i class="ph ph-arrow-right" aria-hidden="true"></i>
           </a>
@@ -74,6 +74,7 @@
         <div class="filter-tabs" aria-label="Filter tools by platform">
           <button class="filter-tab is-active" type="button" data-filter="all" aria-pressed="true">All</button>
           <button class="filter-tab" type="button" data-filter="chrome" aria-pressed="false">Chrome</button>
+          <button class="filter-tab" type="button" data-filter="codex" aria-pressed="false">Codex</button>
           <button class="filter-tab" type="button" data-filter="figma" aria-pressed="false">Figma</button>
           <button class="filter-tab" type="button" data-filter="utilities" aria-pressed="false">Utilities</button>
         </div>
@@ -83,7 +84,7 @@
         <div>
           <h2 id="tools-title">All tools</h2>
         </div>
-        <p id="result-count" class="result-count" aria-live="polite">3 tools</p>
+        <p id="result-count" class="result-count" aria-live="polite">4 tools</p>
       </div>
 
       <div class="tool-grid" id="tool-grid">
@@ -96,6 +97,19 @@
           <p>One-click Git clone on GitHub and GitLab. Pick a folder and get back to building.</p>
           <a class="tool-card__link" href="git-magager/">
             View tool <i class="ph ph-arrow-right" aria-hidden="true"></i>
+          </a>
+        </article>
+
+        <article class="tool-card" data-platform="codex utilities" data-search="markdown preview editor codex plugin local browser visual edit autosave report document">
+          <div class="tool-card__topline">
+            <img class="tool-card__icon" src="assets/images/markdown-preview-editor-icon.svg" alt="Markdown Preview &amp; Editor icon">
+            <span class="availability availability--live"><span></span> Available</span>
+          </div>
+          <span class="platform-chip"><i class="ph ph-command" aria-hidden="true"></i> Codex plugin</span>
+          <h3>Markdown Preview &amp; Editor</h3>
+          <p>Open local Markdown in a polished browser preview, then edit visually or in source with safe autosave.</p>
+          <a class="tool-card__link" href="markdown-preview-editor/">
+            View plugin <i class="ph ph-arrow-right" aria-hidden="true"></i>
           </a>
         </article>
 

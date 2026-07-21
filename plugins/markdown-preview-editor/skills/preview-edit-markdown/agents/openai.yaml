@@ -1,0 +1,4 @@
+interface:
+  display_name: "Preview/Edit Markdown"
+  short_description: "Open and edit Markdown on localhost"
+  default_prompt: "Use $preview-edit-markdown to open, review, and edit this local Markdown file."
