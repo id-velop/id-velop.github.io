@@ -1,0 +1,7 @@
+# 此目录用于存放可执行脚本
+# 支持的脚本类型：Python (.py), Bash (.sh), 等
+# 
+# 示例脚本文件：
+# - data_processor.py
+# - build_helper.sh
+# - generate_report.py

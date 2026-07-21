@@ -1,0 +1,4 @@
+interface:
+  display_name: "React Block Generator"
+  short_description: "Generate React demo blocks for design markdown"
+  default_prompt: "Use $react-block-generator to generate a React demo block and playground preview for this markdown design example."
