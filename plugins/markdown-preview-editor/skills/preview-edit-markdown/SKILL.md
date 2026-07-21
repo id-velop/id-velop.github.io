@@ -1,11 +1,11 @@
 ---
 name: preview-edit-markdown
-description: "Open, render, visually review, and edit a local Markdown file through a secure localhost preview/editor. Use whenever the user asks to open, preview, visually inspect, or edit a local .md document in a browser."
+description: "Open and directly edit a local Markdown file in the browser with automatic saving. Use whenever the user asks to manually edit a local .md document."
 ---
 
 # Preview/Edit Markdown
 
-Use the bundled localhost service whenever a user needs to open, visually preview, or edit a local Markdown file. Reading Markdown only as source for analysis does not require a browser preview.
+Use the bundled localhost service when a user wants to manually edit a local Markdown file. The document opens directly in its single editing mode and saves changes automatically.
 
 ## Start the preview
 

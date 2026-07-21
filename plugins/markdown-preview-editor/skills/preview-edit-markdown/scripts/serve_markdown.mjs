@@ -176,23 +176,9 @@ const css = `
   .report-toolbar-status { margin-left: auto; color: #667085; font-size: 14px; }
   .report-toolbar-status.error { color: #b42318; }
   .report-actions { display: flex; align-items: center; gap: 10px; }
-  button { appearance: none; min-height: 38px; padding: 8px 14px; border: 1px solid #d0d5dd; border-radius: 8px; background: #fff; color: #344054; font: inherit; font-weight: 600; cursor: pointer; }
-  button:hover { background: #f9fafb; }
-  button:focus-visible, textarea:focus-visible { outline: 3px solid rgba(21,112,239,.25); outline-offset: 2px; }
-  button.primary { border-color: #1570ef; background: #1570ef; color: #fff; }
-  button.primary:hover { background: #175cd3; }
-  button:disabled { cursor: not-allowed; opacity: .55; }
-  button[hidden] { display: none; }
   .report-main.visual-editing { outline: 3px solid rgba(21,112,239,.22); outline-offset: 4px; cursor: text; }
   .report-main.visual-editing h1:hover, .report-main.visual-editing h2:hover, .report-main.visual-editing h3:hover, .report-main.visual-editing p:hover, .report-main.visual-editing li:hover, .report-main.visual-editing blockquote:hover, .report-main.visual-editing th:hover, .report-main.visual-editing td:hover { background: #eff8ff; box-shadow: 0 0 0 4px #eff8ff; }
   .report-main.visual-editing img { pointer-events: none; user-select: none; }
-  .editor-panel { max-width: 1440px; margin: 24px auto 80px; padding: 24px; border: 1px solid #d0d5dd; border-radius: 16px; background: #fff; box-shadow: 0 12px 36px rgba(16,24,40,.08); }
-  .editor-panel[hidden], .report-main[hidden] { display: none; }
-  .editor-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
-  .editor-header h1 { margin: 0; font-size: 22px; }
-  .editor-status { min-height: 22px; color: #667085; font-size: 14px; }
-  .editor-status.error { color: #b42318; }
-  .markdown-editor { box-sizing: border-box; display: block; width: 100%; min-height: 72vh; resize: vertical; padding: 20px; border: 1px solid #98a2b3; border-radius: 10px; background: #101828; color: #f2f4f7; font: 14px/1.65 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; tab-size: 2; }
   .table-scroll { margin: 28px 0 40px; overflow-x: auto; overscroll-behavior-inline: contain; border: 1px solid #d0d5dd; border-radius: 12px; background: #fff; box-shadow: 0 4px 14px rgba(16, 24, 40, .06); }
   table { width: 100%; min-width: 1220px; table-layout: fixed; border-collapse: separate; border-spacing: 0; }
   th, td { padding: 16px; vertical-align: top; border-right: 1px solid #d0d5dd; border-bottom: 1px solid #d0d5dd; font-size: 15px; line-height: 1.6; text-align: left; overflow-wrap: break-word; word-break: normal; }
@@ -239,38 +225,13 @@ function documentHtml(markdown) {
   <nav class="report-toolbar" aria-label="报告工具栏">
     <span class="report-toolbar-title">${documentName}</span>
     <span id="visualStatus" class="report-toolbar-status" role="status" aria-live="polite"></span>
-    <div class="report-actions">
-      <button id="visualEditButton" type="button">可视化编辑</button>
-      <button id="sourceEditButton" type="button">编辑源码</button>
-      <button id="visualDoneButton" class="primary" type="button" hidden>完成</button>
-    </div>
   </nav>
   <main id="reportPreview" class="report-main">${content}</main>
-  <section id="editorPanel" class="editor-panel" hidden>
-    <div class="editor-header">
-      <h1>编辑 Markdown</h1>
-      <div class="report-actions">
-        <button id="cancelButton" type="button">取消</button>
-        <button id="saveButton" class="primary" type="button">保存</button>
-      </div>
-    </div>
-    <p id="editorStatus" class="editor-status" role="status" aria-live="polite">保存会直接更新原 Markdown 文档。</p>
-    <textarea id="markdownEditor" class="markdown-editor" data-version="${version}" spellcheck="false" aria-label="Markdown 内容">${escapeHtml(markdown)}</textarea>
-  </section>
   <script nonce="${scriptNonce}">
     (() => {
       const preview = document.getElementById('reportPreview');
-      const panel = document.getElementById('editorPanel');
-      const editor = document.getElementById('markdownEditor');
-      const visualEditButton = document.getElementById('visualEditButton');
-      const sourceEditButton = document.getElementById('sourceEditButton');
-      const visualDoneButton = document.getElementById('visualDoneButton');
       const visualStatus = document.getElementById('visualStatus');
-      const cancelButton = document.getElementById('cancelButton');
-      const saveButton = document.getElementById('saveButton');
-      const status = document.getElementById('editorStatus');
-      let savedValue = editor.value;
-      let visualSnapshot = preview.innerHTML;
+      let documentVersion = '${version}';
       let visualDirty = false;
       let visualRevision = 0;
       let visualSaveInFlight = false;
@@ -351,20 +312,9 @@ function documentHtml(markdown) {
         .join('\\n\\n')
         .replace(/\\n{3,}/g, '\\n\\n') + '\\n';
 
-      const setStatus = (message, isError = false) => {
-        status.textContent = message;
-        status.classList.toggle('error', isError);
-      };
-
       const setVisualStatus = (message, isError = false) => {
         visualStatus.textContent = message;
         visualStatus.classList.toggle('error', isError);
-      };
-
-      const setVisualControls = (editing) => {
-        visualEditButton.hidden = editing;
-        sourceEditButton.hidden = editing;
-        visualDoneButton.hidden = !editing;
       };
 
       const putDocument = async (value) => {
@@ -372,18 +322,17 @@ function documentHtml(markdown) {
           method: 'PUT',
           headers: {
             'content-type': 'text/markdown; charset=utf-8',
-            'x-report-version': editor.dataset.version,
+            'x-report-version': documentVersion,
           },
           body: value,
         });
         const result = await response.json();
         if (!response.ok) throw new Error(result.error || '保存失败');
-        editor.dataset.version = result.version;
+        documentVersion = result.version;
         return result;
       };
 
-      const enterVisualEditMode = () => {
-        visualSnapshot = preview.innerHTML;
+      const enableDirectEditing = () => {
         visualDirty = false;
         preview.contentEditable = 'true';
         preview.spellcheck = true;
@@ -397,16 +346,8 @@ function documentHtml(markdown) {
             window.open(link.href, '_blank', 'noopener');
           });
         });
-        setVisualControls(true);
         setVisualStatus('点击文字直接编辑 · 自动保存');
         preview.focus();
-      };
-
-      const leaveVisualEditMode = () => {
-        preview.contentEditable = 'false';
-        preview.classList.remove('visual-editing');
-        setVisualControls(false);
-        setVisualStatus('已保存');
       };
 
       const saveVisualChanges = async () => {
@@ -419,9 +360,6 @@ function documentHtml(markdown) {
         setVisualStatus('保存中…');
         try {
           await putDocument(nextMarkdown);
-          editor.value = nextMarkdown;
-          savedValue = nextMarkdown;
-          visualSnapshot = preview.innerHTML;
           if (visualRevision === savingRevision) {
             visualDirty = false;
             setVisualStatus('已保存');
@@ -444,66 +382,11 @@ function documentHtml(markdown) {
         visualAutosaveTimer = window.setTimeout(saveVisualChanges, visualAutosaveDelay);
       };
 
-      const finishVisualEditing = async () => {
-        clearTimeout(visualAutosaveTimer);
-        while (visualSaveInFlight) await new Promise((resolve) => window.setTimeout(resolve, 50));
-        if (visualDirty) await saveVisualChanges();
-        if (!visualDirty) leaveVisualEditMode();
-      };
-
-      const enterEditMode = () => {
-        preview.hidden = true;
-        panel.hidden = false;
-        visualEditButton.hidden = true;
-        sourceEditButton.hidden = true;
-        editor.focus();
-      };
-
-      const leaveEditMode = () => {
-        panel.hidden = true;
-        preview.hidden = false;
-        visualEditButton.hidden = false;
-        sourceEditButton.hidden = false;
-        setStatus('保存会直接更新原 Markdown 文档。');
-      };
-
-      visualEditButton.addEventListener('click', enterVisualEditMode);
-      sourceEditButton.addEventListener('click', enterEditMode);
       preview.addEventListener('input', () => {
         if (!preview.classList.contains('visual-editing')) return;
         visualDirty = true;
         visualRevision += 1;
         scheduleVisualAutosave();
-      });
-      visualDoneButton.addEventListener('click', finishVisualEditing);
-      cancelButton.addEventListener('click', () => {
-        if (editor.value !== savedValue && !window.confirm('放弃尚未保存的修改？')) return;
-        editor.value = savedValue;
-        leaveEditMode();
-      });
-
-      const save = async () => {
-        saveButton.disabled = true;
-        cancelButton.disabled = true;
-        setStatus('正在保存…');
-        try {
-          const result = await putDocument(editor.value);
-          savedValue = editor.value;
-          setStatus('已保存，正在刷新预览…');
-          window.location.reload();
-        } catch (error) {
-          setStatus(error.message || '保存失败', true);
-          saveButton.disabled = false;
-          cancelButton.disabled = false;
-        }
-      };
-
-      saveButton.addEventListener('click', save);
-      editor.addEventListener('keydown', (event) => {
-        if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 's') {
-          event.preventDefault();
-          save();
-        }
       });
       document.addEventListener('keydown', (event) => {
         if (preview.classList.contains('visual-editing') && (event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 's') {
@@ -512,12 +395,12 @@ function documentHtml(markdown) {
         }
       });
       window.addEventListener('beforeunload', (event) => {
-        if ((!panel.hidden && editor.value !== savedValue) || (preview.classList.contains('visual-editing') && (visualDirty || visualSaveInFlight))) {
+        if (visualDirty || visualSaveInFlight) {
           event.preventDefault();
           event.returnValue = '';
         }
       });
-      enterVisualEditMode();
+      enableDirectEditing();
     })();
   </script>
   </body></html>`;

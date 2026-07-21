@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Markdown Preview &amp; Editor — a secure local Markdown review and editing plugin for Codex.">
+  <meta name="description" content="Edit local Markdown directly in the browser with automatic saving.">
   <meta name="theme-color" content="#05060d">
   <meta property="og:title" content="Markdown Preview &amp; Editor — YE Studio">
-  <meta property="og:description" content="Preview beautifully. Edit safely. Keep every Markdown document local.">
+  <meta property="og:description" content="Edit Markdown directly. Changes save automatically.">
   <meta property="og:type" content="website">
   <title>Markdown Preview &amp; Editor — YE Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,7 +40,7 @@
           <a class="back-link" href="../"><i class="ph ph-arrow-left" aria-hidden="true"></i> Back to Tool Market</a>
           <span class="platform-chip"><i class="ph ph-command" aria-hidden="true"></i> Codex plugin · v0.1.0</span>
           <h1 id="tool-title">Markdown Preview &amp; Editor</h1>
-          <p class="detail-hero__lede">Turn any local Markdown file into a focused browser workspace. Review the rendered document, edit text in place or switch to source, and save without sending content anywhere.</p>
+          <p class="detail-hero__lede">Open a Markdown file, click the text, and edit. Every change saves automatically.</p>
           <div class="button-row">
             <a class="button button--primary" href="codex://plugins/markdown-preview-editor?marketplacePath=%2FUsers%2Fye.jin%2F.agents%2Fplugins%2Fmarketplace.json">
               Open in Codex <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
@@ -58,46 +58,25 @@
 
     <section class="detail-section" id="features" aria-labelledby="features-title">
       <div class="detail-section__heading">
-        <p class="section-kicker">What it does</p>
-        <h2 id="features-title">Markdown review without context switching.</h2>
-        <p>Codex launches a purpose-built localhost workspace around the file you are already working on.</p>
+        <p class="section-kicker">One simple mode</p>
+        <h2 id="features-title">Edit Markdown. That’s it.</h2>
+        <p>No modes to switch. Open the document and type directly.</p>
       </div>
       <div class="feature-grid">
         <article class="feature-card">
-          <i class="ph ph-eye" aria-hidden="true"></i>
-          <h3>Faithful preview</h3>
-          <p>Render headings, images, links, code, blockquotes, and GitHub-flavored tables in a clean reading layout.</p>
+          <i class="ph ph-cursor-text" aria-hidden="true"></i>
+          <h3>Direct editing</h3>
+          <p>Click any text and edit it by hand.</p>
         </article>
         <article class="feature-card">
-          <i class="ph ph-pencil-simple-line" aria-hidden="true"></i>
-          <h3>Two ways to edit</h3>
-          <p>Edit rendered text directly with autosave, or switch to the full Markdown source when precision matters.</p>
+          <i class="ph ph-floppy-disk-back" aria-hidden="true"></i>
+          <h3>Automatic saving</h3>
+          <p>Changes are written back to the Markdown file automatically.</p>
         </article>
         <article class="feature-card">
           <i class="ph ph-shield-check" aria-hidden="true"></i>
-          <h3>Local and guarded</h3>
-          <p>Loopback-only access, one-file write scope, version conflict checks, atomic saves, and a strict content policy.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="detail-section" aria-labelledby="steps-title">
-      <div class="detail-section__heading">
-        <p class="section-kicker">How it works</p>
-        <h2 id="steps-title">Ask. Review. Refine.</h2>
-      </div>
-      <div class="steps">
-        <article class="step">
-          <h3>Point Codex to a file</h3>
-          <p>Ask Codex to use <code>$preview-edit-markdown</code> with the local report or README you want to inspect.</p>
-        </article>
-        <article class="step">
-          <h3>Review in the browser</h3>
-          <p>The plugin finds a free local port, renders the document, and checks its relative images, links, and tables.</p>
-        </article>
-        <article class="step">
-          <h3>Edit with confidence</h3>
-          <p>Make visual or source changes while conflict detection and atomic writes protect the file on disk.</p>
+          <h3>Local only</h3>
+          <p>Runs on localhost and only updates the file you opened.</p>
         </article>
       </div>
     </section>
@@ -106,8 +85,8 @@
       <div class="privacy-panel">
         <i class="ph ph-hard-drives" aria-hidden="true"></i>
         <div>
-          <h2 id="privacy-title">Your document stays on your machine</h2>
-          <p>The bundled service binds only to <code>127.0.0.1</code>, requires no account, and never uploads document content.</p>
+          <h2 id="privacy-title">Edit locally</h2>
+          <p>Your document stays on your machine.</p>
         </div>
         <a href="codex://plugins/markdown-preview-editor?marketplacePath=%2FUsers%2Fye.jin%2F.agents%2Fplugins%2Fmarketplace.json">View in Codex <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
       </div>

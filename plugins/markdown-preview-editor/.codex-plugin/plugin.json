@@ -1,7 +1,7 @@
 {
   "name": "markdown-preview-editor",
-  "version": "0.1.0",
-  "description": "Preview, visually review, and safely edit local Markdown files from Codex.",
+  "version": "0.1.0+codex.20260721073935",
+  "description": "Edit local Markdown directly in the browser with automatic saving.",
   "author": {
     "name": "YE Studio",
     "url": "https://id-velop.github.io"
@@ -9,20 +9,30 @@
   "homepage": "https://id-velop.github.io/markdown-preview-editor/",
   "repository": "https://github.com/id-velop/id-velop.github.io/tree/main/plugins/markdown-preview-editor",
   "license": "MIT",
-  "keywords": ["markdown", "preview", "editor", "local", "codex"],
+  "keywords": [
+    "markdown",
+    "preview",
+    "editor",
+    "local",
+    "codex"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Markdown Preview & Editor",
-    "shortDescription": "Preview and edit local Markdown safely.",
-    "longDescription": "Open local Markdown in a polished localhost preview, review layouts and linked assets, then edit visually or in source mode with conflict-safe autosave.",
+    "shortDescription": "Edit Markdown directly with autosave.",
+    "longDescription": "Open a local Markdown file, edit the rendered text directly, and save every change automatically.",
     "developerName": "YE Studio",
     "category": "Productivity",
-    "capabilities": ["Interactive", "Write", "Local"],
+    "capabilities": [
+      "Interactive",
+      "Write",
+      "Local"
+    ],
     "websiteURL": "https://id-velop.github.io/markdown-preview-editor/",
     "defaultPrompt": [
-      "Preview this Markdown file in the local editor.",
-      "Open this report and check its tables and images.",
-      "Let me visually edit this Markdown document."
+      "Open this Markdown file for direct editing.",
+      "Let me edit this Markdown document.",
+      "Open this report with automatic saving."
     ],
     "brandColor": "#7957F6",
     "composerIcon": "./assets/markdown-preview-editor-icon.svg",
