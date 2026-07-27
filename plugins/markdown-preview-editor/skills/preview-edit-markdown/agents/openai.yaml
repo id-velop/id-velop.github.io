@@ -1,4 +1,0 @@
-interface:
-  display_name: "Preview/Edit Markdown"
-  short_description: "Edit Markdown directly with autosave"
-  default_prompt: "Use $preview-edit-markdown to open this local Markdown file for direct editing with automatic saving."
