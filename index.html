@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Handcrafted Chrome extensions, Codex plugins, Figma plugins, and tiny utilities from YE Studio.">
+  <meta name="description" content="Handcrafted Chrome extensions and Codex plugins from YE Studio.">
   <meta name="theme-color" content="#05060d">
   <meta property="og:title" content="YE Studio Tool Market">
   <meta property="og:description" content="Small tools. Less friction.">
@@ -26,7 +26,6 @@
       <span class="brand__section">Tool Market</span>
     </a>
     <nav class="site-nav" aria-label="Site links">
-      <a href="#about">About</a>
       <a href="https://github.com/id-velop" target="_blank" rel="noreferrer">
         GitHub <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
       </a>
@@ -40,25 +39,11 @@
       <div class="hero__inner">
         <div class="hero__copy">
           <h1 id="hero-title">Small tools.<br>Less friction.</h1>
-          <p class="hero__lede">Handcrafted Chrome extensions, Codex plugins, Figma plugins, and tiny utilities that solve real problems—fast.</p>
+          <p class="hero__lede">Handcrafted Chrome extensions and Codex plugins that solve real problems—fast.</p>
           <a class="button button--primary" href="#tools">
             Explore tools <i class="ph ph-arrow-right" aria-hidden="true"></i>
           </a>
         </div>
-
-        <a class="featured-card" href="git-magager/" aria-label="View Git Magager">
-          <div class="featured-card__topline">
-            <span class="status-chip"><span></span> Featured</span>
-            <i class="ph ph-arrow-up-right featured-card__corner" aria-hidden="true"></i>
-          </div>
-          <img class="featured-card__icon" src="assets/images/git-magager-icon.png" alt="Git Magager icon">
-          <div>
-            <span class="platform-chip"><i class="ph ph-browser" aria-hidden="true"></i> Chrome extension</span>
-            <h2>Git Magager</h2>
-            <p>Clone repositories with one click. No terminal gymnastics required.</p>
-          </div>
-          <span class="featured-card__action">View tool <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
-        </a>
       </div>
     </section>
 
@@ -75,8 +60,6 @@
           <button class="filter-tab is-active" type="button" data-filter="all" aria-pressed="true">All</button>
           <button class="filter-tab" type="button" data-filter="chrome" aria-pressed="false">Chrome</button>
           <button class="filter-tab" type="button" data-filter="codex" aria-pressed="false">Codex</button>
-          <button class="filter-tab" type="button" data-filter="figma" aria-pressed="false">Figma</button>
-          <button class="filter-tab" type="button" data-filter="utilities" aria-pressed="false">Utilities</button>
         </div>
       </div>
 
@@ -84,11 +67,11 @@
         <div>
           <h2 id="tools-title">All tools</h2>
         </div>
-        <p id="result-count" class="result-count" aria-live="polite">4 tools</p>
+        <p id="result-count" class="result-count" aria-live="polite">2 tools</p>
       </div>
 
       <div class="tool-grid" id="tool-grid">
-        <article class="tool-card" data-platform="chrome utilities" data-search="git magager clone repository github gitlab chrome extension developer">
+        <article class="tool-card" data-platform="chrome" data-search="git magager clone repository github gitlab chrome extension developer">
           <div class="tool-card__topline">
             <img class="tool-card__icon" src="assets/images/git-magager-icon.png" alt="Git Magager icon">
           </div>
@@ -100,7 +83,7 @@
           </a>
         </article>
 
-        <article class="tool-card" data-platform="codex utilities" data-search="markdown editor codex plugin local browser direct edit autosave document">
+        <article class="tool-card" data-platform="codex" data-search="markdown editor codex plugin local browser direct edit autosave document">
           <div class="tool-card__topline">
             <img class="tool-card__icon" src="assets/images/markdown-preview-editor-icon.svg" alt="Markdown Preview &amp; Editor icon">
             <span class="availability availability--live"><span></span> Available</span>
@@ -113,27 +96,6 @@
           </a>
         </article>
 
-        <article class="tool-card" data-platform="figma" data-search="auto layout helper figma plugin spacing frames design">
-          <div class="tool-card__topline">
-            <img class="tool-card__icon" src="assets/images/auto-layout-helper-icon.png" alt="Auto Layout Helper icon">
-            <span class="availability">Upcoming</span>
-          </div>
-          <span class="platform-chip"><i class="ph ph-figma-logo" aria-hidden="true"></i> Figma plugin</span>
-          <h3>Auto Layout Helper</h3>
-          <p>Turn messy selections into tidy, responsive frames without breaking your creative flow.</p>
-          <span class="tool-card__link tool-card__link--muted">In the workshop</span>
-        </article>
-
-        <article class="tool-card" data-platform="figma utilities" data-search="color palette generator figma plugin colors accessibility design">
-          <div class="tool-card__topline">
-            <img class="tool-card__icon" src="assets/images/color-palette-generator-icon.png" alt="Color Palette Generator icon">
-            <span class="availability">Upcoming</span>
-          </div>
-          <span class="platform-chip"><i class="ph ph-figma-logo" aria-hidden="true"></i> Figma plugin</span>
-          <h3>Color Palette Generator</h3>
-          <p>Generate balanced, accessible color systems directly from your Figma canvas.</p>
-          <span class="tool-card__link tool-card__link--muted">In the workshop</span>
-        </article>
       </div>
 
       <div class="empty-state" id="empty-state" hidden>
@@ -144,16 +106,6 @@
       </div>
     </section>
 
-    <section class="about" id="about" aria-labelledby="about-title">
-      <p class="section-kicker">About YE Studio</p>
-      <div class="about__grid">
-        <h2 id="about-title">Useful by design.<br>Small on purpose.</h2>
-        <div class="about__copy">
-          <p>YE Studio makes focused tools for designers and developers. Each release starts with a repetitive task and ends when that task feels effortless.</p>
-          <a href="https://github.com/id-velop" target="_blank" rel="noreferrer">Follow the work on GitHub <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer">
