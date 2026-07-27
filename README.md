@@ -7,21 +7,21 @@ Live site: [https://id-velop.github.io](https://id-velop.github.io)
 ## Routes
 
 - `/` — Tool Market homepage with search and platform filters
-- `/git-magager/` — Git Magager product page
-- `/git-magager/privacy-policy.html` — Git Magager privacy policy
+- `/clone-manager/` — Clone Manager product page
+- `/clone-manager/privacy-policy.html` — Clone Manager privacy policy
 - `/markdown-preview-editor/` — Markdown Preview & Editor Codex plugin page
 - `/plugins/markdown-preview-editor/` — Standalone Codex plugin source
-- `/products/git-magager/` — Git Magager extension source and release artifacts
+- [github.com/id-velop/clone-manager](https://github.com/id-velop/clone-manager) — Clone Manager extension source and release artifacts
 - `/products/design-guideline-illustration-generator/` — Component documentation agent source
 
-The privacy policy is intentionally kept as a child page of the Git Magager product page.
+The privacy policy is intentionally kept as a child page of the Clone Manager product page.
 
 ## Project structure
 
 ```text
 .
 ├── index.html
-├── git-magager/
+├── clone-manager/
 │   ├── index.html
 │   └── privacy-policy.html
 ├── markdown-preview-editor/
@@ -29,7 +29,7 @@ The privacy policy is intentionally kept as a child page of the Git Magager prod
 ├── plugins/
 │   └── markdown-preview-editor/
 ├── products/
-│   ├── git-magager/
+│   ├── clone-manager/
 │   │   ├── extension/
 │   │   └── releases/
 │   └── design-guideline-illustration-generator/

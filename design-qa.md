@@ -8,7 +8,7 @@
 
 - Desktop implementation: `/tmp/tool-market-qa/tool-market-desktop-final.png`
 - Mobile implementation: `/tmp/tool-market-qa/tool-market-mobile-cdp.png`
-- Git Magager detail page: `/tmp/tool-market-qa/git-magager-detail.png`
+- Clone Manager detail page: `/tmp/tool-market-qa/clone-manager-detail.png`
 - Desktop viewport: `1487 × 1058`
 - Mobile viewport: `390 × 844` with CDP device-metric override
 - State: default catalog, All filter selected; detail page at default state
@@ -20,8 +20,8 @@ No actionable P0, P1, or P2 differences remain in the final desktop comparison.
 - Fonts and typography: Manrope matches the selected mock's geometric sans-serif character closely. Display scale, two-line wrap, line height, button type, card titles, and small uppercase labels match the visible hierarchy. System fallbacks remain available if the web font cannot load.
 - Spacing and layout rhythm: header, hero boundary, headline origin, featured-card bounds, search/filter row, catalog heading, and three-card grid align closely with the `1487 × 1058` source. Desktop tool cards retain the source's compact horizontal layout; tablet and mobile intentionally stack.
 - Colors and visual tokens: near-black surfaces, violet controls, blue/violet lighting, subtle white borders, muted copy, and green privacy state preserve the source balance and meet readable contrast in inspected states.
-- Image quality and asset fidelity: Git Magager uses the real extension icon. The two upcoming tools and YE Studio mark use project-bound generated raster assets. The orbital hero is a dedicated raster background rather than a CSS placeholder. The real 128px Git Magager source icon is slightly softer when enlarged; this is accepted as authentic asset fidelity rather than replacing it with an approximation.
-- Copy and content: the selected hero message and tool names are preserved. Upcoming tools deliberately do not expose fake destinations; their inactive copy reads “In the workshop.” Git Magager has working Chrome Web Store, GitHub, and Privacy Policy destinations.
+- Image quality and asset fidelity: Clone Manager uses the real extension icon. The two upcoming tools and YE Studio mark use project-bound generated raster assets. The orbital hero is a dedicated raster background rather than a CSS placeholder. The real 128px Clone Manager source icon is slightly softer when enlarged; this is accepted as authentic asset fidelity rather than replacing it with an approximation.
+- Copy and content: the selected hero message and tool names are preserved. Upcoming tools deliberately do not expose fake destinations; their inactive copy reads “In the workshop.” Clone Manager has working Chrome Web Store, GitHub, and Privacy Policy destinations.
 
 Residual P3 polish:
 
@@ -60,11 +60,11 @@ A separate crop was not needed because both full-view images are native-size, sa
 
 ## Interaction and route checks
 
-- Search “git” → one visible Git Magager result and “1 tool”.
+- Search “git” → one visible Clone Manager result and “1 tool”.
 - Figma filter → two visible tools, pressed state `true`, and “2 tools”.
 - Empty search → empty state visible; Reset restores All, three cards, and an empty input.
 - `⌘/Ctrl + K` focus behavior is implemented in `assets/js/market.js`.
-- Git Magager detail contains three feature cards, the verified Chrome Web Store destination, GitHub source, and the child Privacy Policy route.
+- Clone Manager detail contains three feature cards, the verified Chrome Web Store destination, GitHub source, and the child Privacy Policy route.
 - Privacy Policy title, heading, and no-data-collection summary render at the unchanged route.
 - Browser console errors after final run: none.
 
