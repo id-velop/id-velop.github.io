@@ -104,10 +104,10 @@
 <body>
   <div class="container">
     <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated: June 9, 2026</p>
+    <p class="last-updated">Last updated: July 29, 2026</p>
 
     <div class="highlight-box">
-      <strong>Summary:</strong> Clone Manager does NOT collect, store, or transmit any personal information or user data to external servers. All operations are performed locally on your device.
+      <strong>Summary:</strong> Repository cloning and file writing happen locally on your device. Clone Manager uses ExtensionPay and Stripe only for payment, account sign-in, and license verification.
     </div>
 
     <h2>1. Data Collection</h2>
@@ -127,8 +127,9 @@
     <ul>
       <li>Accesses GitHub and GitLab repository pages to detect clone URLs (HTTPS/SSH)</li>
       <li>Injects a clone button into the page DOM for user convenience</li>
-      <li>Communicates only with a local server running on your machine (localhost:9456)</li>
-      <li>Stores only user preferences (e.g., terminal auto-open setting) in browser local storage</li>
+      <li>Downloads repository data directly from the Git host you choose</li>
+      <li>Writes repository files only to the folder you select</li>
+      <li>Stores extension preferences, the number of free clone attempts used, and cached paid-access status in browser local storage</li>
     </ul>
 
     <h2>3. Permissions Usage</h2>
@@ -136,7 +137,7 @@
 
     <h3>3.1 Core Permissions</h3>
     <ul>
-      <li><strong>storage</strong>: Stores user preferences and configuration settings locally</li>
+      <li><strong>storage</strong>: Stores user preferences, free-trial usage count, and cached paid-access status locally</li>
       <li><strong>activeTab</strong>: Reads the current tab's URL to pre-fill the clone dialog with repository information</li>
       <li><strong>scripting</strong>: Injects the clone button interface into GitHub and GitLab pages</li>
     </ul>
@@ -157,17 +158,18 @@
     </ul>
 
     <h2>4. Third-Party Services</h2>
-    <p>Clone Manager does <strong>NOT</strong> use any third-party services, analytics, or tracking tools.</p>
-    <p>The extension communicates <strong>only</strong> with a local companion server running on your machine at <code>http://127.0.0.1:9456</code>. This server:</p>
+    <p>Clone Manager does <strong>NOT</strong> use analytics or tracking tools.</p>
+    <p>No companion server is required. When you start a clone, the extension communicates directly with the selected Git hosting service solely to retrieve the repository. The extension:</p>
     <ul>
-      <li>Executes Git clone commands in your terminal</li>
-      <li>Opens native folder selection dialogs</li>
-      <li>Stores configuration files locally on your device</li>
-      <li>Does NOT transmit any data to external servers</li>
+      <li>Runs the Git engine inside the browser extension</li>
+      <li>Uses Chrome's native folder picker</li>
+      <li>Does not open Terminal or require you to type commands</li>
+      <li>Writes the cloned repository directly to the folder you select</li>
     </ul>
+    <p>For optional Pro purchases, Clone Manager uses <a href="https://extensionpay.com/" target="_blank" rel="noreferrer">ExtensionPay</a> for checkout, account sign-in, and paid-license verification. ExtensionPay uses Stripe to process payments. Payment and account information is handled by those providers under their respective privacy policies; Clone Manager does not receive or store your full card details.</p>
 
     <h2>5. Data Security</h2>
-    <p>Since all data processing occurs locally on your device, there is no risk of data transmission or server-side data breaches. Your repository URLs and file paths never leave your computer.</p>
+    <p>Your selected local folder path is processed on your device and is not sent to Clone Manager, ExtensionPay, or Stripe. Repository network requests are sent directly to the Git hosting service you selected. Payment and license-verification data is transmitted securely to ExtensionPay and Stripe only when required for those features.</p>
 
     <h2>6. Children's Privacy</h2>
     <p>Clone Manager does not knowingly collect any information from children under the age of 13. As the extension does not collect any personal data, this is not applicable.</p>

@@ -7,7 +7,7 @@ Live site: [https://id-velop.github.io](https://id-velop.github.io)
 ## Routes
 
 - `/` — Tool Market homepage with search and platform filters
-- `/clone-manager/` — Clone Manager product page
+- [clone-manager](clone-manager/) — Clone Manager product page
 - `/clone-manager/privacy-policy.html` — Clone Manager privacy policy
 - `/markdown-preview-editor/` — Markdown Preview & Editor Codex plugin page
 - `/plugins/markdown-preview-editor/` — Standalone Codex plugin source
