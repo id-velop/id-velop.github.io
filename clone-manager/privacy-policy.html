@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clone Manager - Privacy Policy</title>
+  <title>Quick Clone - Privacy Policy</title>
   <style>
     * {
       margin: 0;
@@ -104,42 +104,43 @@
 <body>
   <div class="container">
     <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated: July 29, 2026</p>
+    <p class="last-updated">Last updated: September 11, 2026</p>
 
     <div class="highlight-box">
-      <strong>Summary:</strong> Repository cloning and file writing happen locally on your device. Clone Manager uses ExtensionPay and Stripe only for payment, account sign-in, and license verification.
+      <strong>Summary:</strong> Quick Clone reads repository addresses and handles cloning locally on your device. It does not send your data to the developer, and it does not use analytics, advertising, payments, or tracking services.
     </div>
 
-    <h2>1. Data Collection</h2>
-    <p>Clone Manager does <strong>NOT</strong> collect, store, or transmit any of the following:</p>
+    <h2>1. Information Handled</h2>
+    <p>Quick Clone handles only the information required to provide its repository-cloning features:</p>
     <ul>
-      <li>Personal identification information (name, email, address, etc.)</li>
-      <li>Financial information</li>
-      <li>Authentication credentials</li>
-      <li>Personal communications</li>
-      <li>Location data</li>
-      <li>Browsing history or web activity</li>
-      <li>User behavior or activity logs</li>
+      <li>The URL of the active GitHub or GitLab repository page and its detected HTTPS or SSH clone address</li>
+      <li>The local destination folder selected by the user</li>
+      <li>Extension preferences, including language and preferred clone protocol</li>
+      <li>Local companion settings, including the default clone folder, terminal application, and whether to open the terminal after cloning</li>
     </ul>
+    <p>Quick Clone does not collect names, email addresses, financial information, authentication credentials, personal communications, location data, advertising identifiers, analytics, or user-activity logs. The developer does not receive or store the repository addresses, local paths, or preferences handled by the extension.</p>
 
     <h2>2. Local Data Processing</h2>
-    <p>All operations are performed locally on your device. The extension:</p>
+    <p>The extension and the Quick Clone companion process information locally on your device. They:</p>
     <ul>
-      <li>Accesses GitHub and GitLab repository pages to detect clone URLs (HTTPS/SSH)</li>
-      <li>Injects a clone button into the page DOM for user convenience</li>
-      <li>Downloads repository data directly from the Git host you choose</li>
-      <li>Writes repository files only to the folder you select</li>
-      <li>Stores extension preferences, the number of free clone attempts used, and cached paid-access status in browser local storage</li>
+      <li>Access GitHub and GitLab repository pages to detect clone URLs (HTTPS/SSH)</li>
+      <li>Inject a clone button into the page DOM for user convenience</li>
+      <li>Send the selected clone address to the local companion through <code>http://127.0.0.1:9456</code></li>
+      <li>Use the Git installation on your device to retrieve repository data from the Git host you choose</li>
+      <li>Write repository files only to the folder you select</li>
+      <li>Store language and clone-protocol preferences in Chrome local storage</li>
+      <li>Store companion settings in a local configuration file on your device</li>
     </ul>
+    <p>Clone job status is held temporarily in the companion's memory and is cleared when the companion stops. Quick Clone does not operate a remote server that receives this information.</p>
 
     <h2>3. Permissions Usage</h2>
     <p>The extension requests the following permissions, each serving a specific purpose:</p>
 
     <h3>3.1 Core Permissions</h3>
     <ul>
-      <li><strong>storage</strong>: Stores user preferences, free-trial usage count, and cached paid-access status locally</li>
+      <li><strong>storage</strong>: Stores the selected interface language and HTTPS/SSH clone preference in Chrome local storage</li>
       <li><strong>activeTab</strong>: Reads the current tab's URL to pre-fill the clone dialog with repository information</li>
-      <li><strong>scripting</strong>: Injects the clone button interface into GitHub and GitLab pages</li>
+      <li><strong>nativeMessaging</strong>: Starts and checks the locally installed Quick Clone companion</li>
     </ul>
 
     <h3>3.2 Host Permissions</h3>
@@ -149,41 +150,50 @@
       <li><code>https://gitlab.com/*</code></li>
       <li><code>https://*.gitlab.com/*</code></li>
       <li><code>https://*.gitlab.org/*</code></li>
+      <li><code>https://git.garena.com/*</code></li>
+      <li><code>https://*.garena.com/*</code></li>
+      <li><code>http://127.0.0.1:9456/*</code></li>
     </ul>
     <p>These permissions are used solely for:</p>
     <ul>
       <li>Detecting Git repository clone URLs on repository pages</li>
       <li>Injecting clone buttons into the page interface</li>
       <li>Monitoring page navigation changes for single-page applications</li>
+      <li>Communicating with the Quick Clone companion on the same device</li>
     </ul>
 
     <h2>4. Third-Party Services</h2>
-    <p>Clone Manager does <strong>NOT</strong> use analytics or tracking tools.</p>
-    <p>No companion server is required. When you start a clone, the extension communicates directly with the selected Git hosting service solely to retrieve the repository. The extension:</p>
+    <p>Quick Clone does <strong>not</strong> use analytics, advertising, tracking, payment, account, or license-verification services.</p>
+    <p>Quick Clone requires its local companion to select folders and run Git. When you start a clone:</p>
     <ul>
-      <li>Runs the Git engine inside the browser extension</li>
-      <li>Uses Chrome's native folder picker</li>
-      <li>Does not open Terminal or require you to type commands</li>
-      <li>Writes the cloned repository directly to the folder you select</li>
+      <li>The extension sends the clone address and selected local path only to the companion running on your device</li>
+      <li>The companion opens the operating system's folder picker and runs the locally installed Git command</li>
+      <li>Git connects directly to the selected Git hosting service under that service's privacy policy</li>
+      <li>The companion can open the user's selected terminal application after cloning when that setting is enabled</li>
     </ul>
-    <p>For optional Pro purchases, Clone Manager uses <a href="https://extensionpay.com/" target="_blank" rel="noreferrer">ExtensionPay</a> for checkout, account sign-in, and paid-license verification. ExtensionPay uses Stripe to process payments. Payment and account information is handled by those providers under their respective privacy policies; Clone Manager does not receive or store your full card details.</p>
 
-    <h2>5. Data Security</h2>
-    <p>Your selected local folder path is processed on your device and is not sent to Clone Manager, ExtensionPay, or Stripe. Repository network requests are sent directly to the Git hosting service you selected. Payment and license-verification data is transmitted securely to ExtensionPay and Stripe only when required for those features.</p>
+    <h2>5. Data Use and Sharing</h2>
+    <p>Quick Clone uses handled information only to provide its user-facing repository-cloning features. It does not sell user data, use it for advertising or creditworthiness, transfer it to data brokers, or permit humans to read it. Information is shared only with the local companion and the Git hosting service selected by the user as necessary to complete a clone.</p>
 
-    <h2>6. Children's Privacy</h2>
-    <p>Clone Manager does not knowingly collect any information from children under the age of 13. As the extension does not collect any personal data, this is not applicable.</p>
+    <h2>6. Data Security</h2>
+    <p>The local companion accepts requests only from the registered Quick Clone extension and listens only on the loopback address of your device. Repository network requests are made by your local Git installation directly to the Git hosting service you select. Quick Clone does not send repository addresses, local paths, settings, or repository contents to the developer or unrelated third parties.</p>
 
-    <h2>7. Changes to This Privacy Policy</h2>
+    <h2>7. Storage, Retention, and Deletion</h2>
+    <p>Extension preferences remain in Chrome local storage until you change them, remove the extension, or clear the extension's data. Companion settings remain in its local configuration file until you change them or remove that file. Cloned repositories remain in the folders you selected until you delete them. Quick Clone has no developer-operated copy of this data.</p>
+
+    <h2>8. Children's Privacy</h2>
+    <p>Quick Clone does not knowingly collect personal information from children under the age of 13.</p>
+
+    <h2>9. Changes to This Privacy Policy</h2>
     <p>We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last updated" date at the top of this page.</p>
 
-    <h2>8. Contact Us</h2>
+    <h2>10. Contact Us</h2>
     <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
     <p><strong>Email:</strong> better0027@gmail.com<br>
-    <strong>GitHub:</strong> <a href="https://github.com/id-velop/clone-manager" target="_blank">Clone Manager source</a></p>
+    <strong>GitHub:</strong> <a href="https://github.com/id-velop/git-clone-manager" target="_blank" rel="noreferrer">Quick Clone source</a></p>
 
     <footer>
-      <p>&copy; 2026 Clone Manager. All rights reserved.</p>
+      <p>&copy; 2026 Quick Clone. All rights reserved.</p>
     </footer>
   </div>
 </body>
